@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/holo_blue_dark"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="Login APP"
+            android:gravity="center"
+            android:textAllCaps="true"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:layout_marginTop="50dp"
+            android:textColor="@color/white"
+            android:textSize="50sp"
+            />
+        <ImageView
+            android:layout_gravity="center"
+            android:id="@+id/card"
+            android:src="@drawable/ic_android_black_24dp"
+            app:tint="@color/white"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+    </LinearLayout>
+    <FrameLayout
+        android:id="@+id/sheet"
+        android:layout_width="match_parent"
+        android:layout_height="650dp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+        android:background="@drawable/login_sheeet_box"
+
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="25dp"
+            >
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/email_container"
+                android:layout_width="match_parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:textColorHint="@android:color/holo_blue_dark"
+                app:boxStrokeColor="@android:color/holo_blue_bright"
+                app:hintTextColor="@android:color/holo_blue_dark"
+                android:layout_marginTop="50dp"
+                android:layout_height="wrap_content">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:textColor="@android:color/holo_blue_light"
+                    android:textColorHint="@android:color/holo_blue_dark"
+                    android:id="@+id/email"
+                    android:textColorHighlight="@android:color/holo_blue_dark"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Please insert your email"
+                    android:textAllCaps="true"
+                    android:inputType="textEmailAddress"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/password_container"
+                android:layout_width="match_parent"
+                app:layout_constraintTop_toBottomOf="@id/email_container"
+                android:layout_marginTop="25dp"
+                android:textColorHint="@android:color/holo_blue_dark"
+                app:boxStrokeColor="@android:color/holo_blue_bright"
+                app:hintTextColor="@android:color/holo_blue_dark"
+                android:layout_height="wrap_content">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:textColor="@android:color/holo_blue_light"
+                    android:textColorHint="@android:color/holo_blue_dark"
+                    android:textColorHighlight="@android:color/holo_blue_dark"
+                    android:id="@+id/password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Please insert your password"
+                    android:textAllCaps="true"
+                    android:inputType="textEmailAddress"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.button.MaterialButton
+                android:onClick="Login"
+                android:layout_width="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/password_container"
+                android:layout_height="wrap_content"
+                app:layout_constraintRight_toRightOf="@id/email_container"
+                android:text="Login"
+                android:layout_marginTop="25dp"
+                android:textColor="@color/white"
+                android:backgroundTint="@android:color/holo_blue_dark"
+
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
